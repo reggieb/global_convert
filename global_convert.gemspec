@@ -12,7 +12,7 @@ Gem::Specification.new do |s|
   s.summary     = "Tool for converting coordinates between different global charting systems"
   s.description = "Simplifies converting from longitudes and latitudes, to eastings and northings."
   s.license = 'LICENSE'
-  s.files = Dir["lib/**/*"] + ["LICENSE", "Rakefile", "README.rdoc"]
+  s.files = Dir["lib/**/*"] + ["LICENSE", "Rakefile", "README.rdoc", 'data/projections.yml']
   s.test_files = Dir["test/**/*"]
 
   s.add_dependency 'proj4rb'
