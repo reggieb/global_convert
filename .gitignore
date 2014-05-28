@@ -1,4 +1,8 @@
+# Don't source control Gemfile lock as code to be released as gem
 Gemfile.lock
 
-#rvm config files
+# Ignore gem files generated from gemspec
+*.gem
+
+# Ignore rvm config files
 .ruby-*

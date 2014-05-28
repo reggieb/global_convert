@@ -9,6 +9,16 @@ to convert coordinates between global charting systems with different projection
 Global Convert was greatly influenced by Peter Hick's blog: 
 {Converting OSGB36 (Eastings/Northings) to WGS84 (Longitude/Latitude) in Ruby}[http://blog.poggs.com/index.php/2010/09/converting-osgb36-eastingsnorthings-to-wgs84-longitudelatitude-in-ruby/]
 
+== Installation
+
+Global Convert is releases as a gem. So either:
+
+    gem install 'global_convert'
+
+or add this to your Gemfile:
+
+    gem 'global_convert'
+
 == UK Ordinance Survey National Grid references to Longitude / Latitude
 
     require 'global_convert'
