@@ -1,3 +1,47 @@
-= global_convert
+= Global Convert
 
-Tool for converting coordinates between different global charting systems
+Tool for converting coordinates between different global charting systems.
+
+This tool uses {PROJ.4}[http://trac.osgeo.org/proj/] 
+via the {proj4rb gem}[https://github.com/cfis/proj4rb]
+to convert coordinates between global charting systems with different projections.
+
+Global Convert was greatly influenced by Peter Hick's blog: 
+{Converting OSGB36 (Eastings/Northings) to WGS84 (Longitude/Latitude) in Ruby}[http://blog.poggs.com/index.php/2010/09/converting-osgb36-eastingsnorthings-to-wgs84-longitudelatitude-in-ruby/]
+
+== UK Ordinance Survey National Grid references to Longitude / Latitude
+
+    require 'global_convert'
+
+    easting = 529978
+    northing = 186491
+
+    location = Location.new(
+      input: {
+        projection: :osgb36,
+        lon: easting,
+        lat: northing
+      },
+      output: {
+        projection: :wgs84
+      }
+    )
+
+    puts "Latitude = #{location.lat} in radians."
+    puts "Longitude = #{location.lon} in radians."
+
+== Projections
+
+Projections are defined via /data/projections.yml. This contains a labelled list of
+PROJ.4 projection configurations. To use an alternative set of projections, define
+your own projections using the same format as projections.yml and register that
+with GlobalConvert.
+
+    GlobalConvert.projection_file_path = 'path/to/alternative/projections.yml'
+
+Additional projection configurations can be found at:
+
+* http://spatialreference.org/
+* http://www.remotesensing.org/geotiff/proj_list/
+
+The options are documented on the {PROJ.4 site}[http://trac.osgeo.org/proj/].

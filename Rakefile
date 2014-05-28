@@ -19,3 +19,10 @@ Rake::TestTask.new do |t|
   t.test_files = FileList['test/**/*.rb']
 end
 
+task :console do
+  require 'irb'
+  require 'irb/completion'
+  require 'global_convert'
+  ARGV.clear
+  IRB.start
+end
