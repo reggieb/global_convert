@@ -26,7 +26,7 @@ or add this to your Gemfile:
     easting = 529978
     northing = 186491
 
-    location = Location.new(
+    location = GlobalConvert::Location.new(
       input: {
         projection: :osgb36,
         lon: easting,
