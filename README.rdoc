@@ -42,6 +42,12 @@ or add this to your Gemfile:
 
     puts "Latitude = #{location.lat} in radians."
     puts "Longitude = #{location.lon} in radians."
+    
+=== OS Map References
+
+If you need to start from an OS Map Reference, rather than Eastings and Northings
+another gem os_map_ref[https://github.com/reggieb/os_map_ref] can be used to
+convert the map reference to eastings and northings.
 
 == Projections
 
